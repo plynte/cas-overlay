@@ -2,16 +2,16 @@
 
 
 function copy() {
-	echo -e "Creating configuration directory under /apps/conf/cas"
-	mkdir -p /apps/conf/cas/config
+	echo -e "Creating configuration directory under /etc/cas"
+	mkdir -p /etc/cas/config
 
-	echo -e "Copying configuration files from etc/cas to /apps/conf/cas"
-	cp -rfv etc/cas/* /apps/conf/cas
+	echo -e "Copying configuration files from etc/cas to /etc/cas"
+	cp -rfv etc/cas/* /etc/cas
 }
 
 function help() {
 	echo "Usage: build.sh [copy|clean|package|run|debug|bootrun|gencert]"
-	echo "	copy: Copy config from ./etc/cas/config to /apps/conf/cas/config"
+	echo "	copy: Copy config from ./etc/cas/config to /etc/cas/config"
 	echo "	clean: Clean Maven build directory"
 	echo "	package: Clean and build CAS war, also call copy"
 	echo "	run: Build and run cas.war via spring boot (java -jar target/cas.war)"
@@ -48,7 +48,7 @@ function runalone() {
 }
 
 function gencert() {
-	if [[ ! -d /apps/conf/cas ]] ; then 
+	if [[ ! -d /etc/cas ]] ; then 
 		copy
 	fi
 	which keytool
@@ -60,8 +60,8 @@ function gencert() {
 	DNAME="${DNAME:-CN=cas.example.org,OU=Example,OU=Org,C=US}"
 	CERT_SUBJ_ALT_NAMES="${CERT_SUBJ_ALT_NAMES:-dns:example.org,dns:localhost,ip:127.0.0.1}"
 	echo "Generating keystore for CAS with DN ${DNAME}"
-	keytool -genkeypair -alias cas -keyalg RSA -keypass changeit -storepass changeit -keystore /apps/conf/cas/thekeystore -dname ${DNAME} -ext SAN=${CERT_SUBJ_ALT_NAMES}
-	keytool -exportcert -alias cas -storepass changeit -keystore /apps/conf/cas/thekeystore -file /apps/conf/cas/cas.cer
+	keytool -genkeypair -alias cas -keyalg RSA -keypass changeit -storepass changeit -keystore /etc/cas/thekeystore -dname ${DNAME} -ext SAN=${CERT_SUBJ_ALT_NAMES}
+	keytool -exportcert -alias cas -storepass changeit -keystore /etc/cas/thekeystore -file /etc/cas/cas.cer
 }
 
 function cli() {
