@@ -80,14 +80,18 @@
             <groupId>org.jasig.cas</groupId>
             <artifactId>cas-server-support-ldap</artifactId>
             <version>${cas.version}</version>
+            <scope>system</scope>
+            <systemPath>lib/cas-server-support-ldap-5.1.1.jar</systemPath>
         </dependency>
         <!-- LDAP END -->
-        
+
         <!-- JSON 注册 START -->
         <dependency>
             <groupId>org.jasig.cas</groupId>
             <artifactId>cas-server-support-json-service-registry</artifactId>
             <version>${cas.version}</version>
+            <scope>system</scope>
+            <systemPath>lib/cas-server-support-json-service-registry-5.1.1.jar</systemPath>
         </dependency>
         <!-- JSON 注册 END -->
 
@@ -96,11 +100,15 @@
             <groupId>org.jasig.cas</groupId>
             <artifactId>cas-server-support-jdbc-drivers</artifactId>
             <version>${cas.version}</version>
+            <scope>system</scope>
+            <systemPath>lib/cas-server-support-jdbc-drivers-5.1.1.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>org.jasig.cas</groupId>
             <artifactId>cas-server-support-jdbc</artifactId>
             <version>${cas.version}</version>
+            <scope>system</scope>
+            <systemPath>lib/cas-server-support-jdbc-5.1.1.jar</systemPath>
         </dependency>
         <!-- JDBC END -->
 
