@@ -104,6 +104,13 @@
             <AppenderRef ref="casAudit"/>
         </AsyncLogger>
 
+        <!-- LDAP Debug Start -->
+        <AsyncLogger name="org.ldaptive" level="debug" additivity="false">
+            <AppenderRef ref="console"/>
+            <AppenderRef ref="file"/>
+        </AsyncLogger>
+        <!-- LDAP Debug End -->
+        
         <!-- All Loggers inherit appenders specified here, unless additivity="false" on the Logger -->
         <AsyncRoot level="warn">
             <AppenderRef ref="casFile"/>
