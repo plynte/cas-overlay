@@ -1,0 +1,91 @@
+dn: dc=example,dc=org
+objectClass: top
+objectClass: domain
+dc: example
+
+dn: cn=Directory Administrators,dc=example,dc=org
+objectClass: top
+objectClass: groupofuniquenames
+cn: Directory Administrators
+uniqueMember: cn=Directory Manager
+
+dn: ou=Groups,dc=example,dc=org
+objectClass: top
+objectClass: organizationalunit
+ou: Groups
+
+dn: ou=People,dc=example,dc=org
+objectClass: top
+objectClass: organizationalunit
+ou: People
+
+dn: ou=Special Users,dc=example,dc=org
+objectClass: top
+objectClass: organizationalUnit
+ou: Special Users
+description: Special Administrative Accounts
+
+dn: cn=Accounting Managers,ou=Groups,dc=example,dc=org
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: Accounting Managers
+ou: groups
+description: People who can manage accounting entries
+uniqueMember: cn=Directory Manager
+
+dn: cn=HR Managers,ou=Groups,dc=example,dc=org
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: HR Managers
+ou: groups
+description: People who can manage HR entries
+uniqueMember: cn=Directory Manager
+
+dn: cn=QA Managers,ou=Groups,dc=example,dc=org
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: QA Managers
+ou: groups
+description: People who can manage QA entries
+uniqueMember: cn=Directory Manager
+
+dn: cn=PD Managers,ou=Groups,dc=example,dc=org
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: PD Managers
+ou: groups
+description: People who can manage engineer entries
+uniqueMember: cn=Directory Manager
+
+dn: cn=admin,dc=example,dc=org
+objectClass: simpleSecurityObject
+objectClass: organizationalRole
+objectClass: top
+cn: admin
+description: LDAP administrator
+userPassword: {SSHA512}6ZdZbucirRPpc9PeZxB9PbkNsttvU7phvVs0EDM3KQ6iHF3cfIr1gyhBh
+ RzNAXROQHDZ21y9f1QeMxn6MeJ/oySbLufMzg9E
+
+dn: uid=jsmith,ou=People,dc=example,dc=org
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: inetOrgPerson
+givenName: Joe
+uid: jsmith
+sn: Smith
+cn: John Smith
+userPassword: {SSHA512}bPEriRROveBv0EFv2aHI+7f3+sJ6aKCYv20XoXBFEgKw941BnaxKOQ037
+ 3tXkSmkIJMPGgSUNzUzGLYnVSp3i9hxx9WCNiv6
+
+dn: uid=kaka,ou=People,dc=example,dc=org
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: inetOrgPerson
+givenName: CJZ
+uid: kaka
+sn:: 6ZmI5p2w5q2j
+cn: kaka chan
+userPassword: {MD5}4QrcOUm6Wau+VuBX8g+IPg==
+
