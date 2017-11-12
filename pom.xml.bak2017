@@ -80,14 +80,51 @@
             <groupId>org.jasig.cas</groupId>
             <artifactId>cas-server-support-ldap</artifactId>
             <version>${cas.version}</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/cas-server-support-ldap-5.1.1.jar</systemPath>
         </dependency>
         <!-- LDAP END -->
+
+        <!-- JSON 注册 START -->
+        <dependency>
+            <groupId>org.jasig.cas</groupId>
+            <artifactId>cas-server-support-json-service-registry</artifactId>
+            <version>${cas.version}</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/cas-server-support-json-service-registry-5.1.1.jar</systemPath>
+        </dependency>
+        <!-- JSON 注册 END -->
+
+        <!-- JDBC START -->
+        <dependency>
+            <groupId>org.jasig.cas</groupId>
+            <artifactId>cas-server-support-jdbc-drivers</artifactId>
+            <version>${cas.version}</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/cas-server-support-jdbc-drivers-5.1.1.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.jasig.cas</groupId>
+            <artifactId>cas-server-support-jdbc</artifactId>
+            <version>${cas.version}</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/cas-server-support-jdbc-5.1.1.jar</systemPath>
+        </dependency>
+        <!-- JDBC END -->
+
+        <!-- 使用 MySQL DB START -->        
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.36</version>
+        </dependency>
+        <!-- 使用 MySQL DB END -->        
 
     </dependencies>
 
     <properties>
         <cas.version>5.1.1</cas.version>
-        <springboot.version>1.5.3.RELEASE</springboot.version>
+        <springboot.version>1.5.8.RELEASE</springboot.version>
         <!-- app.server could be -jetty, -undertow, -tomcat, or blank if you plan to provide appserver -->
         <app.server>-tomcat</app.server> 
 
