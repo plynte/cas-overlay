@@ -5,8 +5,10 @@ cas log dir change . ---> /apps/logs/cas
 
 ### 生成tomcat HTTPS keystore
 
-keytool -genkey -alias cas -keyalg RSA -keysize 2048 -validity 3650 -keypass 123456 -storepass 123456 \
--keystore /apps/conf/cas/key/cas.keystore -dname "CN=cas.example.org,OU=example,O=example.org,L=GZ,ST=GD,C=CN"
+keytool -genkeypair -alias tomcat -keyalg RSA -keysize 2048 -validity 3650 \
+    -keypass 4QrcOUm6Wau+VuBX8g+IPg== -storepass 4QrcOUm6Wau+VuBX8g+IPg== \
+    -keystore /apps/conf/cas/key/tomcat.keystore \
+    -dname "CN=cas.example.org,OU=example,O=example.org,L=GZ,ST=GD,C=CN"
 
 
 

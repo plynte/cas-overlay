@@ -74,7 +74,13 @@
             <type>war</type>
             <scope>runtime</scope>
         </dependency>
-
+        <!-- JSON 注册 START -->
+        <dependency>
+            <groupId>org.jasig.cas</groupId>
+            <artifactId>cas-server-support-json-service-registry</artifactId>
+            <version>${cas.version}</version>
+        </dependency>
+        <!-- JSON 注册 END -->
         <!-- LDAP START -->
         <dependency>
             <groupId>org.jasig.cas</groupId>
